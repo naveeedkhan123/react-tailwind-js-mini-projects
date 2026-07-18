@@ -7,6 +7,7 @@ import Contact from "./components/pages/Contact";
 import RootLayout from "./components/common/RootLayout";
 import Login from "./components/pages/Login";
 import Error404 from "./components/pages/Error404";
+import ProductDetail from "./components/pages/ProductDetail";
 
 function App () {
   return (
@@ -25,6 +26,9 @@ function App () {
    <Route path='/contact' element = {<Contact/>} />
 
    <Route path="*" element = {<Error404/>} />
+
+<Route path='/product-details/:pid' element= {<ProductDetail/>} />
+
     </Route>
 
      <Route path='/login' element = {<Login/>} />

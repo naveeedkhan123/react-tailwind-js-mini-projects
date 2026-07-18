@@ -1,17 +1,21 @@
 import { FiHeart, FiShoppingBag, FiStar } from 'react-icons/fi'
+import { Link } from 'react-router'
 
-const products = [
+export const products = [
   {
+    id: 1,
     name: 'Everyday Essential Tee', category: 'Men’s apparel', price: '$32.00',
     image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85',
     colors: ['bg-stone-900', 'bg-stone-300', 'bg-[#8b5e3c]'],
   },
   {
+    id: 2,
     name: 'Structured Carryall', category: 'Accessories', price: '$148.00',
     image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=85',
     colors: ['bg-[#a27250]', 'bg-stone-900'],
   },
   {
+    id: 3,
     name: 'Classic Leather Sneaker', category: 'Footwear', price: '$96.00',
     image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=900&q=85',
     colors: ['bg-white ring-1 ring-stone-300', 'bg-stone-900'],
@@ -25,12 +29,12 @@ function ProductCard({ product, featured }) {
         {featured && <span className="absolute left-4 top-4 z-10 rounded-full bg-stone-900 px-3 py-1 text-xs font-semibold text-white">New arrival</span>}
         <button aria-label={`Save ${product.name}`} className="absolute right-4 top-4 z-10 grid size-10 place-items-center rounded-full bg-white/90 text-stone-700 shadow-sm transition hover:bg-stone-900 hover:text-white"><FiHeart size={18} /></button>
         <img src={product.image} alt={product.name} className="size-full object-cover transition duration-500 group-hover:scale-105" />
-        <button className="absolute inset-x-4 bottom-4 flex translate-y-16 items-center justify-center gap-2 rounded-xl bg-stone-900 py-3 text-sm font-semibold text-white opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100"><FiShoppingBag size={16} /> Add to bag</button>
+        <Link to={`/product-details/${product.id}`} className="absolute inset-x-4 bottom-4 flex translate-y-16 items-center justify-center gap-2 rounded-xl bg-stone-900 py-3 text-sm font-semibold text-white opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100"><FiShoppingBag size={16} /> View details</Link>
       </div>
       <div className="p-5">
         <div className="mb-2 flex items-center justify-between gap-4"><p className="text-xs font-medium uppercase tracking-[0.15em] text-stone-500">{product.category}</p><div className="flex items-center gap-1 text-xs text-amber-500"><FiStar className="fill-current" /> 4.9</div></div>
         <div className="flex items-start justify-between gap-4"><h2 className="text-lg font-semibold leading-snug text-stone-900">{product.name}</h2><span className="whitespace-nowrap text-base font-semibold text-stone-900">{product.price}</span></div>
-        <div className="mt-4 flex gap-2" aria-label="Available colors">{product.colors.map((color, index) => <span key={index} className={`size-4 rounded-full ${color}`} />)}</div>
+        <div className="mt-4 flex items-center justify-between gap-3"><div className="flex gap-2" aria-label="Available colors">{product.colors.map((color, index) => <span key={index} className={`size-4 rounded-full ${color}`} />)}</div><Link to={`/product-details/${product.id}`} className="text-sm font-semibold text-amber-700 hover:text-amber-800">View</Link></div>
       </div>
     </article>
   )
