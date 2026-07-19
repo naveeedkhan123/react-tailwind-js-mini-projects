@@ -8,6 +8,7 @@ import RootLayout from "./components/common/RootLayout";
 import Login from "./components/pages/Login";
 import Error404 from "./components/pages/Error404";
 import ProductDetail from "./components/pages/ProductDetail";
+import ProductApi from "./components/pages/ProductApi";
 
 function App () {
   return (
@@ -27,7 +28,10 @@ function App () {
 
    <Route path="*" element = {<Error404/>} />
 
+   <Route path="/product-api" element = {<ProductApi/>} />
+
 <Route path='/product-details/:pid' element= {<ProductDetail/>} />
+<Route path='/product-details/api/:pid' element= {<ProductDetail apiProduct/>} />
 
     </Route>
 

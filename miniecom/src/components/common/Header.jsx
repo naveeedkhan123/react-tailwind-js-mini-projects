@@ -90,6 +90,15 @@ export default function Header() {
             Login
           </Link>
         </li>
+
+        <li>
+          <Link
+          to={'/product-api'}
+            className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
+          >
+            ProductApi
+          </Link>
+        </li>
       </ul>
     </div>
   </div>

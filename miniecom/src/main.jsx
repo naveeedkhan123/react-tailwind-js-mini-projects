@@ -7,8 +7,7 @@ import Product from './components/pages/Product'
 import Contact from './components/pages/Contact'
 import App from './App'
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+ 
  <App/>
 
-  </StrictMode>,
 )
