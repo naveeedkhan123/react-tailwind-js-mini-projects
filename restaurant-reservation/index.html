@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Table Reservation</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+        <h1>
+            <i class="fa-solid fa-utensils"></i>
+            Restaurant Reservation
+        </h1>
+    </header>
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container">
+
+        <!-- Dashboard -->
+        <section class="dashboard">
+
+            <div class="card">
+                <i class="fa-solid fa-chair"></i>
+                <h2 id="totalTables">8</h2>
+                <p>Total Tables</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-circle-check"></i>
+                <h2 id="availableTables">8</h2>
+                <p>Available</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-calendar-check"></i>
+                <h2 id="reservedTables">0</h2>
+                <p>Reserved</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-clock"></i>
+                <h2 id="todayReservations">0</h2>
+                <p>Today's Reservations</p>
+            </div>
+
+        </section>
+
+        <!-- Reservation Form -->
+        <section class="reservation-form">
+
+            <h2>Reserve a Table</h2>
+
+            <form id="reservationForm">
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Customer Name"
+                    required
+                >
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Phone Number"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="guests"
+                    placeholder="Guests"
+                    min="1"
+                    required
+                >
+
+                <input
+                    type="date"
+                    id="date"
+                    required
+                >
+
+                <input
+                    type="time"
+                    id="time"
+                    required
+                >
+
+                <select id="tableNumber" required>
+                    <option value="">Select Table</option>
+                    <option>Table 1</option>
+                    <option>Table 2</option>
+                    <option>Table 3</option>
+                    <option>Table 4</option>
+                    <option>Table 5</option>
+                    <option>Table 6</option>
+                    <option>Table 7</option>
+                    <option>Table 8</option>
+                </select>
+
+                <button type="submit">
+                    <i class="fa-solid fa-plus"></i>
+                    Reserve Table
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- Restaurant Tables -->
+        <section class="tables">
+
+            <h2>Restaurant Tables</h2>
+
+            <div class="table-grid" id="tableGrid">
+
+                <!-- JS Render Karega -->
+
+            </div>
+
+        </section>
+
+        <!-- Search + Filter -->
+        <section class="controls">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search Customer..."
+            >
+
+            <select id="filterSelect">
+                <option value="all">All Reservations</option>
+                <option value="today">Today's</option>
+                <option value="upcoming">Upcoming</option>
+            </select>
+
+        </section>
+
+        <!-- Reservation List -->
+        <section class="reservation-list">
+
+            <h2>Reservations</h2>
+
+            <div id="reservationContainer">
+
+                <!-- JS Render Karega -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
